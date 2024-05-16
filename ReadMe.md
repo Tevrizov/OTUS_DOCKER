@@ -67,22 +67,10 @@ __Отличие от виртуализации__
 
 ### 4.Собранный образ запушить в docker hub.
 
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker tag mynginx etevrizov/mynginx:v1
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker images
-REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
-etevrizov/mynginx   v1        9264b4a03b8c   36 minutes ago   53MB
-mynginx             latest    9264b4a03b8c   36 minutes ago   53MB
-hello-world         latest    d2c94e258dcb   12 months ago    13.3kB
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$
+![текст](screenshots/2.png)  
 
+![текст](screenshots/3.png)  
 
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker push etevrizov/mynginx:v1
-The push refers to repository [docker.io/etevrizov/mynginx]
-e2535bd89b95: Pushed 
-091f2e931cf5: Pushed 
-d4fc045c9e3a: Mounted from library/alpine 
-v1: digest: sha256:96f88234c3db0a69fc6f9b1606540a1e4a67da12747b994d78e627d35ec8ee31 size: 947
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ 
 
 
 
