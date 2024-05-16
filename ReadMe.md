@@ -11,33 +11,10 @@ __Сборка образа__
 
 ![текст](screenshots/1.png)  
 
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker build  -t mynginx . 
-[+] Building 1.3s (8/8) FINISHED                                                                                                                                               docker:default
- => [internal] load build definition from Dockerfile                                                                                                                                     0.0s
- => => transferring dockerfile: 788B                                                                                                                                                     0.0s
- => [internal] load metadata for docker.io/library/alpine:latest                                                                                                                         1.2s
- => [internal] load .dockerignore                                                                                                                                                        0.0s
- => => transferring context: 2B                                                      
-...
-
-
-
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker images 
-REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
-mynginx       latest    9264b4a03b8c   4 minutes ago   53MB
-hello-world   latest    d2c94e258dcb   12 months ago   13.3kB
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$
 
 __Запуск контейнера__  
 
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                               NAMES
-2c0654b894a7   mynginx   "nginx -g 'daemon of…"   6 seconds ago   Up 5 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   thirsty_payne
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ curl 127.0.0.1:80
-Default web page
-tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ ^C
-
-
+![текст](screenshots/4.png)  
 
 
 ### 2.Определить разницу между контейнером и образом.
