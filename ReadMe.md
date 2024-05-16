@@ -76,6 +76,7 @@ https://github.com/a13xp0p0v/kernel-build-containers
 
 ![текст](screenshots/3.png)  
 
+[Ссылка на репозиторий docker hub](https://hub.docker.com/repository/docker/etevrizov/mynginx/general)
 
 
 
