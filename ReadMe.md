@@ -7,7 +7,32 @@
 ### 1.Создать свой кастомный образ nginx на базе alpine. 
 После запуска nginx должен отдавать кастомную страницу (достаточно изменить дефолтную страницу nginx).
 
+__Сборка образа__  
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker build  -t mynginx . 
+[+] Building 1.3s (8/8) FINISHED                                                                                                                                               docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                     0.0s
+ => => transferring dockerfile: 788B                                                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/alpine:latest                                                                                                                         1.2s
+ => [internal] load .dockerignore                                                                                                                                                        0.0s
+ => => transferring context: 2B                                                      
+...
 
+
+
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker images 
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mynginx       latest    9264b4a03b8c   4 minutes ago   53MB
+hello-world   latest    d2c94e258dcb   12 months ago   13.3kB
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$
+
+__Запуск контейнера__  
+
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                               NAMES
+2c0654b894a7   mynginx   "nginx -g 'daemon of…"   6 seconds ago   Up 5 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   thirsty_payne
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ curl 127.0.0.1:80
+Default web page
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ ^C
 
 
 
@@ -62,7 +87,22 @@ __Отличие от виртуализации__
 
 ### 4.Собранный образ запушить в docker hub.
 
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker tag mynginx etevrizov/mynginx:v1
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker images
+REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
+etevrizov/mynginx   v1        9264b4a03b8c   36 minutes ago   53MB
+mynginx             latest    9264b4a03b8c   36 minutes ago   53MB
+hello-world         latest    d2c94e258dcb   12 months ago    13.3kB
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$
 
+
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker push etevrizov/mynginx:v1
+The push refers to repository [docker.io/etevrizov/mynginx]
+e2535bd89b95: Pushed 
+091f2e931cf5: Pushed 
+d4fc045c9e3a: Mounted from library/alpine 
+v1: digest: sha256:96f88234c3db0a69fc6f9b1606540a1e4a67da12747b994d78e627d35ec8ee31 size: 947
+tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ 
 
 
 
