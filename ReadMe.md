@@ -8,6 +8,9 @@
 После запуска nginx должен отдавать кастомную страницу (достаточно изменить дефолтную страницу nginx).
 
 __Сборка образа__  
+
+![текст](screenshots/1.png)  
+
 tep@tep-HYM-WXX:~/OTUS-DZ/19. Docker: основы работы с контейнеризацией/docker-nginx$ sudo docker build  -t mynginx . 
 [+] Building 1.3s (8/8) FINISHED                                                                                                                                               docker:default
  => [internal] load build definition from Dockerfile                                                                                                                                     0.0s
